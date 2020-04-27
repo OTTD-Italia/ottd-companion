@@ -35,5 +35,9 @@
       "passwordField": "password"
     }
   },
+  "telegram": {
+    "username": "Your_Bot",
+    "token": "[your-token-here]"
+  },
   "nedb": "../data"
 }

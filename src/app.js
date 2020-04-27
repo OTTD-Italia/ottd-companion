@@ -9,7 +9,7 @@ const feathers = require('@feathersjs/feathers');
 const configuration = require('@feathersjs/configuration');
 const express = require('@feathersjs/express');
 const socketio = require('@feathersjs/socketio');
-
+const telegramBot = require('feathers-telegram-bot');
 
 const middleware = require('./middleware');
 const services = require('./services');
@@ -43,6 +43,8 @@ app.configure(authentication);
 app.configure(services);
 // Set up event channels (see channels.js)
 app.configure(channels);
+
+app.use(telegramBot(app.get("telegram")));
 
 // Configure a middleware for 404s and the error handler
 app.use(express.notFound());
